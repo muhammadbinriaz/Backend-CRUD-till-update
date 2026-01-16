@@ -6,10 +6,7 @@ const Tasks = require("./routes/task");
 const connectDB = require("./db/connect");
 
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
+app.use(express.static("./public"));
 
 app.use("/api/v1/prac", Tasks);
 
