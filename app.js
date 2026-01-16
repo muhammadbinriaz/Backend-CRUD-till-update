@@ -5,12 +5,14 @@ app.use(express.json());
 const Tasks = require("./routes/task");
 const connectDB = require("./db/connect");
 const notFound = require("./middlewares/notFound");
+const errorHandlerMiddlware = require("./middlewares/errorHandler");
 
 app.use(express.json());
 app.use(express.static("./public"));
 
 app.use("/api/v1/prac", Tasks);
 app.use(notFound);
+app.use(errorHandlerMiddlware);
 
 const port = 3300;
 
