@@ -5,6 +5,8 @@ app.use(express.json());
 const Tasks = require("./routes/task");
 const connectDB = require("./db/connect");
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("hello world");
 });
