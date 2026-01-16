@@ -14,7 +14,7 @@ app.use("/api/v1/prac", Tasks);
 app.use(notFound);
 app.use(errorHandlerMiddlware);
 
-const port = 3300;
+const port = process.env.PORT || 3300;
 
 let start = async () => {
   try {
